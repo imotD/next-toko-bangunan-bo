@@ -1,3 +1,4 @@
+import { DataTable } from "@/components/DataTabel/DataTabel";
 import { Invoice } from "./invoice.model";
 import { Table, Tag } from "antd";
 import type { ColumnsType } from "antd/es/table";
@@ -35,16 +36,11 @@ export default function InvoiceListView({ invoices }: Props) {
   return (
     <>
       <h1>Invoice</h1>
-      <Table
-        rowKey="id"
+
+      <DataTable<Invoice>
+        data={invoices}
         columns={columns}
-        dataSource={invoices}
-        onRow={(record) => ({
-          onClick: () => {
-            window.location.href = `/invoice/${record.id}`;
-          },
-          style: { cursor: "pointer" },
-        })}
+        rowKey="id"
       />
     </>
   );

@@ -1,6 +1,7 @@
 import { Table, Tag } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import { InventoryItem } from "./inventory.model";
+import { DataTable } from "@/components/DataTabel/DataTabel";
 
 type Props = {
     items: InventoryItem[];
@@ -14,7 +15,7 @@ export default function InventoryListView({
     const columns: ColumnsType<InventoryItem> = [
         {
             title: "Nama Barang",
-            dataIndex: "name",
+            dataIndex: "title",
         },
         {
             title: "Stok",
@@ -34,10 +35,10 @@ export default function InventoryListView({
     return (
         <>
             <h1>Inventory</h1>
-            <Table
-                rowKey="id"
+            <DataTable<InventoryItem>
+                data={items}
                 columns={columns}
-                dataSource={items}
+                rowKey="id"
             />
         </>
     );
