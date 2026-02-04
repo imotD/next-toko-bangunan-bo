@@ -1,4 +1,4 @@
-import { ColumnType } from "antd/es/table";
+import { ColumnType, TablePaginationConfig } from "antd/es/table";
 
 export interface DataTableProps<T extends object>{
     data: T[];
@@ -6,4 +6,5 @@ export interface DataTableProps<T extends object>{
     rowKey: string | ((record: T) => string);
     loading?: boolean;
     emptyText?: string;
+    pagination?: TablePaginationConfig;
 }

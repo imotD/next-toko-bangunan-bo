@@ -7,6 +7,7 @@ export function DataTable<T extends object>({
   rowKey,
   loading = false,
   emptyText = "No Data",
+  pagination,
 }: DataTableProps<T>) {
   return (
     <Table<T>
@@ -15,7 +16,7 @@ export function DataTable<T extends object>({
       rowKey={rowKey}
       loading={loading}
       locale={{ emptyText }}
-      pagination={false}
+      pagination={pagination}
     />
   )
 }
