@@ -1,5 +1,5 @@
-import { Table } from "antd"
-import { DataTableProps } from "./DataTabel.types"
+import { Table } from "antd";
+import { DataTableProps } from "./DataTabel.types";
 
 export function DataTable<T extends object>({
   data,
@@ -8,6 +8,7 @@ export function DataTable<T extends object>({
   loading = false,
   emptyText = "No Data",
   pagination,
+  bordered = false,
 }: DataTableProps<T>) {
   return (
     <Table<T>
@@ -17,6 +18,7 @@ export function DataTable<T extends object>({
       loading={loading}
       locale={{ emptyText }}
       pagination={pagination}
+      bordered={bordered}
     />
-  )
+  );
 }
