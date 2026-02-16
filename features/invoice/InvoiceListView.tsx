@@ -2,16 +2,20 @@ import { DataTable } from "@/components/DataTabel/DataTabel";
 import { Invoice } from "./invoice.model";
 import { Table, Tag } from "antd";
 import type { ColumnsType } from "antd/es/table";
+import Link from "next/link";
 
 type Props = {
   invoices: Invoice[];
-}
+};
 
 export default function InvoiceListView({ invoices }: Props) {
   const columns: ColumnsType<Invoice> = [
     {
       title: "Invoice Number",
       dataIndex: "number",
+      render: (value: string, record: Invoice) => (
+        <Link href={`/invoice/${record.id}`}>{value}</Link>
+      ),
     },
     {
       title: "Customer",
@@ -37,11 +41,7 @@ export default function InvoiceListView({ invoices }: Props) {
     <>
       <h1>Invoice</h1>
 
-      <DataTable<Invoice>
-        data={invoices}
-        columns={columns}
-        rowKey="id"
-      />
+      <DataTable<Invoice> data={invoices} columns={columns} rowKey="id" />
     </>
   );
 }
