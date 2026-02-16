@@ -5,7 +5,8 @@ export function useInventoryDetailViewModel(id: string | string[] | undefined) {
     id: Number(id),
     name: "Bata Merah",
     stock: 100,
-    description: "Bata merah berkualitas tinggi",
+    description:
+      "Semen Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem Semen Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem Semen Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem Semen Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem Semen Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem",
   };
 
   return {
